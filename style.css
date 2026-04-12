@@ -1,25 +1,96 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
+/* ===== RESET ===== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0b1220, #111827);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  color: white;
   padding: 40px;
 }
 
+/* Animation fond */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== CONTENEUR GLASS ===== */
 .container {
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
-  background: #1e293b;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  padding: 35px;
+
+  background: rgba(30, 41, 59, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
 }
 
+.container:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== TITRE PRINCIPAL ===== */
 h1 {
-  color: #38bdf8;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* ===== SOUS TITRES ===== */
 h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+
+  padding-left: 12px;
   border-left: 4px solid #38bdf8;
-  padding-left: 10px;
+}
+
+/* ===== TEXTES ===== */
+p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ===== LIENS ===== */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #a78bfa;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }
